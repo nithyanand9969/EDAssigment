@@ -163,8 +163,13 @@ const Card = () => {
                               handleOpen(getUserName(parseInt(userId)))
                             }
                           >
-                            <p>Post Title: {post.title}</p>
-                            <p>Contant: {post.body}</p>
+                            <p>{post.title}</p>
+
+                            <p>
+                              {post.body.length > 50
+                                ? `${post.body.substring(0, 50)}...`
+                                : post.body}
+                            </p>
                           </div>
                         </div>
                       ))}
