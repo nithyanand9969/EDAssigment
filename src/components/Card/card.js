@@ -146,37 +146,33 @@ const Card = () => {
                 </Typography>
               </div>
             </div>
-            <div class="box-post-user">
-              <div className="box-post-user">
-                {Object.keys(getUserPostCount()).map((userId) => {
-                  if (selectedUserName === getUserName(parseInt(userId))) {
-                    const userPosts = posts
-                      .filter((post) => post.userId === parseInt(userId))
-                      .slice(0, 3);
 
-                    return (
-                      <div className="flex-container" key={userId}>
-                        <div
-                          className="box-post-peruser"
-                          onClick={() =>
-                            handleOpen(getUserName(parseInt(userId)))
-                          }
-                        >
-                          <div>
-                            <h4>{getUserName(parseInt(userId))}</h4>
+            <div class="box-post-user">
+              {Object.keys(getUserPostCount()).map((userId) => {
+                if (selectedUserName === getUserName(parseInt(userId))) {
+                  const userPosts = posts
+                    .filter((post) => post.userId === parseInt(userId))
+                    .slice(0, 3);
+
+                  return (
+                    <div key={userId} class="box-post-peruser">
+                      {userPosts.map((post) => (
+                        <div key={post.id}>
+                          <div
+                            onClick={() =>
+                              handleOpen(getUserName(parseInt(userId)))
+                            }
+                          >
+                            <p>Post Title: {post.title}</p>
+                            <p>Contant: {post.body}</p>
                           </div>
-                          {userPosts.map((post) => (
-                            <div key={post.id}>
-                              <p>Post Title: {post.title}</p>
-                            </div>
-                          ))}
                         </div>
-                      </div>
-                    );
-                  }
-                  return null;
-                })}
-              </div>
+                      ))}
+                    </div>
+                  );
+                }
+                return null;
+              })}
             </div>
           </div>
         </div>

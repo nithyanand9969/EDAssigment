@@ -196,7 +196,8 @@
 }
 
 .box-post-user {
-
+display: flex;
+flex: row;
   justify-content: space-between;
   margin-top: 10px;
   height: 20vh;
@@ -205,13 +206,10 @@
 /* Define individual box styles */
 .box-post-peruser {
   display: flex;
+  flex-direction: row;
+  flex: row;
   padding: 10px;
   margin: 5px;
   text-align: center;
   border: 1px solid #888; /* Individual border for each box */
-}
-.post-user{
-
-  flex-direction: row;
-  justify-content: space-around;
 }
