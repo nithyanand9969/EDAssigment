@@ -1,0 +1,54 @@
+.header{
+    width: 100%;
+    height: 65px;
+    background-color: aqua;
+    
+}
+.header-title{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    
+}
+.recent-post{
+    background-color: aqua;
+    color: #FFFFFF;
+    border-radius: 20%;
+    cursor: pointer;
+}
+.recent-post:hover{
+    background-color: #FFFFFF;
+    color: black;
+}
+.Search{
+    width: 100%;
+    height: 10%;
+   background-color: black;
+    color: antiquewhite;
+}
+
+
+
+/* For screens up to 768px */
+@media screen and (max-width: 768px) {
+    .header {
+      height: 50px;
+    }
+  
+    .header-title {
+      justify-content: space-between;
+    }
+  
+    .Search {
+      margin-top: 100px;
+    }
+  }
+  
+  /* For screens larger than 768px */
+  @media screen and (min-width: 769px) {
+    .Search {
+      margin-top: 150px;
+    }
+  }
+  
