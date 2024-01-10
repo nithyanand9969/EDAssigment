@@ -40,21 +40,6 @@ const Card = () => {
       });
   }, []);
 
-  useEffect(() => {
-    const fetchCountryList = async () => {
-      try {
-        const response = await fetch("http://worldtimeapi.org/api/timezone");
-        const data = await response.json();
-        setCountries(data);
-        setSelectedCountry(data[0]);
-      } catch (error) {
-        console.error("Error fetching countries:", error);
-      }
-    };
-
-    fetchCountryList();
-  }, []);
-
   const handleCountryChange = (event) => {
     setSelectedCountry(event.target.value);
   };
